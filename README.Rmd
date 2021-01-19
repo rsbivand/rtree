@@ -9,10 +9,17 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The rtree package offers fast Euclidean within-distance checks and KNN calculations for points in 2D space.
-It offers significant speed-ups vis-a-vis simple implementations by relying on the [R-tree data structure](https://en.wikipedia.org/wiki/R-tree) implementation of <http://www.boost.org/>.
+The rtree package offers fast Euclidean within-distance checks and 
+KNN calculations for points in 2D space.
+It offers significant speed-ups vis-a-vis simple implementations 
+by relying on the [R-tree data structure](https://en.wikipedia.org/wiki/R-tree) 
+implementated by the 
+[Boost geometry](https://www.boost.org/doc/libs/1_75_0/libs/geometry/doc/html/geometry/spatial_indexes/introduction.html)
+library.
 
-rtree was inspired by [this](http://gallery.rcpp.org/articles/Rtree-examples/) example in the Rcpp gallery.
+rtree was inspired by 
+[this](http://gallery.rcpp.org/articles/Rtree-examples/) 
+example in the Rcpp gallery.
 
 ## Installation
 
@@ -21,6 +28,11 @@ You can install the package directly from this repository:
 ```{r eval=FALSE}
 # install.packages("devtools") # Install if needed
 devtools::install_github("akoyabio/rtree")
+
+Note: As of rtree version 0.1.1, rtree requires R version 4.0.0 or higher.
+This is because version 1.75 of `boost::geometry` requires C++14 which is not
+well supported in R versions before 4.0.0.
+
 ```
 
 
